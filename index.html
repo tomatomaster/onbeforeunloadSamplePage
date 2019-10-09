@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script type="text/javascript">
-   window.addEventListener('beforeunload', function (e) {
-   return "ページを離れようとしています。よろしいですか？(Custom)"; 
-});
+var onBeforeunloadHandler = function(e) {
+    e.returnValue = 'ちょっと待ってくださいよ。まだダメですよ。';
+};
+window.addEventListener('beforeunload', onBeforeunloadHandler, false);
+
   </script>
   <title>ページ離脱時に確認するよ</title>
 </head>
